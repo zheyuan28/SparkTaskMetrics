@@ -1,11 +1,9 @@
 # SparkTaskMetrics
-Task Metrics Explorer
+Task Metrics Explorer - a tool that explode task internal metrics
 
-Build:
+* Build: run `sbt package`
 
-run `sbt package`
-
-Usage:
+* Usage:
 
 ```scala
 import com.databricks.TaskMetricsExplorer
@@ -15,13 +13,11 @@ val query = sql("select 1 + 1").show()
 val res = t.runAndMeasure(query)
 ```
 
-You can check the result:
+* Result:
 
 ```scala
 res.select($"stageId", $"taskType", $"taskLocality", $"executorRunTime").show(false)
 ```
-
-Result:
 
 ```
 +-------+----------+-------------+---------------+
